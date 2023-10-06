@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-  entry: './app/js/index.js',
+  entry: './src/js/index.js',
   module: {
     rules: [
       { test: /\.s[ac]ss$/i, use: [ 'style-loader', 'css-loader', 'sass-loader' ] },
@@ -11,11 +11,11 @@ module.exports = {
     ]
   },
   output: {
-    filename: './index_bundle.js'
+    filename: './js/index_bundle.js'
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './app/index.html'
+      template: './src/index.html'
     }),
   ],
   devServer: {
