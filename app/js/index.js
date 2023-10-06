@@ -1,5 +1,5 @@
 'use strict'
-import '../scss/styles.scss'
+import '../assets/css/style.css'
 
 const $start = document.querySelector('#start');
 const $game = document.querySelector('#game');
