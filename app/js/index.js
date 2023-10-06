@@ -1,4 +1,5 @@
 'use strict'
+import '../scss/styles.scss'
 
 const $start = document.querySelector('#start');
 const $game = document.querySelector('#game');
@@ -14,10 +15,6 @@ let isGameStarted = false;
 $start.addEventListener('click', startGame);
 $game.addEventListener('click', handleBoxClick);
 $gameTime.addEventListener('input', setGameTime);
-
-function hide($el) {
-  $el.classList.add('hide');
-}
 
 function startGame() {
   score = 0;
@@ -73,19 +70,22 @@ function handleBoxClick(event) {
 
 function renderBox() {
   $game.innerHTML = '';
+  
   let box = document.createElement('div');
   let boxSize = getRandom(30, 100);
+  let boxStyle = box.style;
+
   let gameSize = $game.getBoundingClientRect();
   let maxTop = gameSize.height - boxSize;
   let maxLeft = gameSize.width - boxSize;
 
-  box.style.height = box.style.width = boxSize + 'px';
-  box.style.position = 'absolute';
-  box.style.backgroundColor = randomColor();
-  box.style.border = '1px solid #ccc';
-  box.style.top = getRandom(0, maxTop) + 'px';
-  box.style.left = getRandom(0, maxLeft) + 'px';;
-  box.style.cursor = 'pointer';
+  boxStyle.height = boxStyle.width = boxSize + 'px';
+  boxStyle.position = 'absolute';
+  boxStyle.backgroundColor = randomColor();
+  boxStyle.border = '1px solid #ccc';
+  boxStyle.top = getRandom(0, maxTop) + 'px';
+  boxStyle.left = getRandom(0, maxLeft) + 'px';;
+  boxStyle.cursor = 'pointer';
   box.setAttribute('data-box', 'true');
 
   $game.insertAdjacentElement('afterbegin', box);

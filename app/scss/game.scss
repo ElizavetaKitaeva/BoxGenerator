@@ -1,0 +1,12 @@
+.game {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  background: rgba(204, 204, 204, 0.459);
+  min-height: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  max-height: 300px;
+}
